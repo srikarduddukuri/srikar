@@ -1,0 +1,127 @@
+Newlogin.jsp:
+
+<html>
+<head>
+<script type = "text/javascript" >
+function disableBackButton()
+{
+window.history.forward(1);
+}
+//setTimeout("disableBackButton()", 0);
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSP Page</title>
+<link href="default.css" rel="stylesheet" type="text/css" />
+ <link href="style.css" rel="stylesheet" type="text/css" />
+ </head>
+ <body onload="disableBackButton()">
+ <center>
+ <table class="tablestyle" cellpadding="0" cellspacing="0">
+ <tr>
+ <td align="center" colspan="2" bgcolor="white">
+ <div id="header">
+ <table cellspacing="5">  <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><img src="main_logo.jpg" alt="jmage invalid"/></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><img src="scrlogo.jpg" alt="image invalid"/></td>
+            
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><img src="emblem.jpg" alt="image invalid"/></td>
+</tr>		
+</table>
+</div> <br> 
+<font    style="font-family: sans-serif "><b>WELCOME TO DAILY MATERIAL TRANSACTION REGISTER SYSTEM</b></font>
+ <br><br>
+ <form method="get" action="loginhandler.jsp">
+<center>
+<fieldset style="height:330px;width:400px;border:1px solid green" >
+<legend><b>LOGIN</b></legend>
+ <table border=0 cellspacing=15 cellpadding=10>
+ <tr>
+ <td>  User Name  </td>
+ <td>  :  </td>
+<td> <input type="text" name="rn"/> </td>
+</tr>
+<tr>
+<td>  Password  </td>
+ <td> :  </td>
+ <td> <input type="password" name="pw"/> </td>
+ </tr>         
+ </table>
+ <br>
+<input type="submit" value="Submit"/>
+ &nbsp; &nbsp;
+ <input type="reset" value="Reset"/>
+ <br> <br>
+ </fieldset>
+ </center>
+<br><br>
+</form>  
+ </td>
+</tr>
+<tr>              
+<td colspan="2" id="footer">
+            <marquee behavior="scroll" width="1000" direction="left"><b> Developed by E-WORLD/Software Training and Development Center/SCRWWO/BZA</b></marquee>
+</td> </tr>
+</table></center>
+</body>
+</html>
+Home.jsp
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<%
+  String uname=(String) session.getAttribute("uname");
+  if(uname==null)
+   {
+      //response.sendRedirect("login.jsp");
+   }
+%>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSP Page</title>
+<link href="default.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<center>
+<table class="tablestyle" cellpadding="0" cellspacing="0">
+ <tr>
+ <th>
+<td align="center" colspan="2" bgcolor="white">
+<div id="header">
+<table cellspacing="5">
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><img src="main_logo.jpg" alt="jmage invalid"/></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><img src="scrlogo.jpg" alt="image invalid"/></td>
+            <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td><img src="emblem.jpg" alt="image invalid"/></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+<tr ><td id="hedder1"><a href="home.jsp"></a>&nbsp;&nbsp;<td id="hedder2"><a href="logout.jsp"></a></td></tr>
+<tr>
+ <td valign="top" width="100" height="300" bgcolor="#fdd">
+ <div>
+ <ul id="navmenu">
+<li><a href="welcome.jsp" target="destination" class="top_parent" >&nbsp; HOME</a>
+               </li>
+<li><a href="registration1.jsp" target="destination" class="top_parent" >&nbsp; REGISTRATION</a>
+</li>
+<li><a href="ledger.jsp" target="destination" class="top_parent" >&nbsp; LEDGER</a>
+</li>
+<li><a href="newlogin.jsp" target="_self" class="top_parent" >&nbsp; LOGOUT</a>
+</li>
+</ul>
+</div>
+</td>
+<td valign="top">
+<iframe name="destination" style=" border-style:none ; background-color: white" height="450" width="906"  align="left" scrolling="yes">
+<img src="images/main.jpg" alt="image not found"/>
+</iframe>
+</td>
+</tr>
+<tr>
+ <td colspan="2" id="footer">
+ <marquee><b>Developed by E-WORLD/Software Training and Development Center/SCRWWO/BZA</b></marquee></td></tr></table></center> </body></html>
+
+
+
